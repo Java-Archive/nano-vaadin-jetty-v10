@@ -26,6 +26,8 @@ public class HelloWorld {
   }
 
   public static void main(String[] args) {
+    //init i18n
+    //init stagemonitor
     new CoreUIService().startup();
   }
 }
