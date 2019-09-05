@@ -22,7 +22,6 @@ import org.eclipse.jetty.webapp.*;
 import org.rapidpm.dependencies.core.logger.HasLogger;
 import org.rapidpm.frp.model.Result;
 
-import static java.lang.Integer.valueOf;
 import static java.lang.System.getProperty;
 import static org.rapidpm.frp.model.Result.failure;
 
@@ -60,7 +59,7 @@ public class CoreUIService
       context.setAllowNullPathInfo(true);
       context.setAttribute(JAR_PATTERN , ".*");
 
-      Server server = new Server(valueOf(getProperty(CORE_UI_SERVER_PORT, CORE_UI_SERVER_PORT_DEFAULT)));
+      Server server = new Server(Integer.parseInt(getProperty(CORE_UI_SERVER_PORT, CORE_UI_SERVER_PORT_DEFAULT)));
       server.setHandler(context);
 
       server.start();
